@@ -1,0 +1,15 @@
+<h1>Chat</h1>
+
+<nav>
+    <a href="/products">Volver</a>
+</nav>
+
+<div>
+    <input id="text" class="input-chat" onkeydown="handleKeyDown(event, '{{user.first_name}}')">
+    <button onclick="sendMessage('{{user.first_name}}')">Enviar</button>
+</div>
+
+<div id="chatMessages" class="chat-messages"></div>
+
+<script src="/socket.io/socket.io.js"></script>
+<script src="/js/user/chat.js"></script>

@@ -1,0 +1,27 @@
+<h1>Producto ID {{product._id}}</h1>
+
+<nav>
+    <a href="/products">Volver</a>
+</nav>
+
+<div class="product-info">
+    <p>Título: {{product.title}}</p>
+    <p>Descripción: {{product.description}}</p>
+    <p>Código: {{product.code}}</p>
+    <p>Precio: {{product.price}}</p>
+    <p>Status: {{product.status}}</p>
+    <p>Stock: {{product.stock}}</p>
+    <p>Categoría: {{product.category}}</p>
+    <p>Imágenes: {{product.thumbnails}}</p>
+    <p>Propietario: {{product.owner}}</p>
+    <div class="product-add-to-cart">
+        {{#if product.status}}
+        <input type="number" id="quantity" value="1" min="1" max="{{product.stock}}" onkeydown="return false">
+        <button onclick="addProductToCart('{{product._id}}', '{{user.cart}}')">Agregar al carrito</button>
+        {{else}}
+        <h3>Producto no disponible</h3>
+        {{/if}}
+    </div>
+</div>
+
+<script src="/js/user/product.js"></script>

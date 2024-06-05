@@ -1,0 +1,83 @@
+<h1>Bienvenido {{user.first_name}}</h1>
+
+<nav>
+    <a href="/cart/{{user.cart}}">Carrito</a>
+
+    <a href="/profile">Perfil</a>
+
+    <a href="/chat">Chat</a>
+
+    {{#if user.isPremium}}
+    <a href="/premium/products">Premium</a>
+    {{/if}}
+
+    <button onclick="logout()">Cerrar sesión</button>
+</nav>
+
+<form class="query-params-form" id="queryParamsForm">
+    <div>
+        <label for="limit">Límite</label>
+        <input type="number" id="limit" name="limit">
+    </div>
+
+    <div>
+        <label for="page">Página</label>
+        <input type="number" id="page" name="page">
+    </div>
+
+    <div>
+        <label for="status">Estado</label>
+        <select id="status" name="status">
+            <option value="">Seleccionar</option>
+            <option value="true">Disponible</option>
+            <option value="false">No disponible</option>
+        </select>
+    </div>
+
+    <div>
+        <label for="category">Categoría</label>
+        <input type="text" id="category" name="category">
+    </div>
+
+    <div>
+        <label for="sort">Ordenar por precio</label>
+        <select id="sort" name="sort">
+            <option value="">Seleccionar</option>
+            <option value="1">Ascendente</option>
+            <option value="-1">Descendente</option>
+        </select>
+    </div>
+
+    <div>
+        <button type="submit">Aplicar</button>
+    </div>
+</form>
+
+<div class="products-container">
+    {{#each products}}
+    <div class="product-card">
+        <h3>{{title}}</h3>
+        <p>{{category}}</p>
+        <p><strong>${{price}}</strong></p>
+        <a href="/product/{{_id}}">Comprar</a>
+    </div>
+    {{/each}}
+</div>
+
+<div>
+    {{#if pagination.hasPrevPage}}
+    <a href={{pagination.prevLink}}>Anterior</a>
+    {{else}}
+    <a>Anterior</a>
+    {{/if}}
+
+    <p>Página {{pagination.page}} de {{pagination.totalPages}}</p>
+
+    {{#if pagination.hasNextPage}}
+    <a href={{pagination.nextLink}}>Siguiente</a>
+    {{else}}
+    <a>Siguiente</a>
+    {{/if}}
+</div>
+
+<script src="/js/user/products.js"></script>

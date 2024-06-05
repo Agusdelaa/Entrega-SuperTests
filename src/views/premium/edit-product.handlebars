@@ -1,0 +1,60 @@
+<h1>Editar producto ID {{product._id}}</h1>
+
+<nav>
+    <a href="/premium/products">Volver</a>
+</nav>
+
+<form id="editProductForm">
+    <input type="hidden" id="productId" name="productId" value="{{product._id}}">
+
+    <div>
+        <label for="title">Título</label>
+        <input type="text" id="title" name="title" value="{{product.title}}">
+    </div>
+
+    <div>
+        <label for="description">Descripción</label>
+        <input type="text" id="description" name="description" value="{{product.description}}">
+    </div>
+
+    <div>
+        <label for="code">Código</label>
+        <input type="text" id="code" name="code" value="{{product.code}}">
+    </div>
+
+    <div>
+        <label for="price">Precio</label>
+        <input type="number" id="price" name="price" value="{{product.price}}">
+    </div>
+
+    <div>
+        <label for="status">Status</label>
+        <select id="status" name="status">
+            <option value="true">Disponible</option>
+            <option value="false">No disponible</option>
+        </select>
+    </div>
+
+    <div>
+        <label for="stock">Stock</label>
+        <input type="number" id="stock" name="stock" value="{{product.stock}}">
+    </div>
+
+    <div>
+        <label for="category">Categoría</label>
+        <input type="text" id="category" name="category" value="{{product.category}}">
+    </div>
+
+    <div>
+        <label for="thumbnails">Imagenes</label>
+        <input type="text" id="thumbnails" name="thumbnails" value="{{product.thumbnails}}">
+    </div>
+
+    <input type="hidden" id="owner" name="owner" value="{{user.email}}">
+
+    <div>
+        <button type="submit">Editar producto</button>
+    </div>
+</form>
+
+<script src="/js/premium/edit-product.js"></script>

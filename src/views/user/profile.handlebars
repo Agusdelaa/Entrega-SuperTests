@@ -1,0 +1,19 @@
+<h1>Usuario ID {{user._id}}</h1>
+
+<nav>
+    <a href="/products">Volver</a>
+</nav>
+
+<div class="profile-info">
+    <p>Nombre: {{user.first_name}}</p>
+    <p>Apellido: {{user.last_name}}</p>
+    <p>Correo electrónico: {{user.email}}</p>
+    <p>Edad: {{user.age}}</p>
+    <p>Rol: {{user.role}}</p>
+
+    <div>
+        <button onclick="changeUserRole('{{user._id}}')">Cambiar rol</button>
+    </div>
+</div>
+
+<script src="/js/user/profile.js"></script>

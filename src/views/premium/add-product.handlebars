@@ -1,0 +1,58 @@
+<h1>Agregar producto</h1>
+
+<nav>
+    <a href="/premium/products">Volver</a>
+</nav>
+
+<form id="addProductForm">
+    <div>
+        <label for="title">Título</label>
+        <input type="text" id="title" name="title">
+    </div>
+
+    <div>
+        <label for="description">Descripción</label>
+        <input type="text" id="description" name="description">
+    </div>
+
+    <div>
+        <label for="code">Código</label>
+        <input type="text" id="code" name="code">
+    </div>
+
+    <div>
+        <label for="price">Precio</label>
+        <input type="number" id="price" name="price">
+    </div>
+
+    <div>
+        <label for="status">Status</label>
+        <select id="status" name="status">
+            <option value="true">Disponible</option>
+            <option value="false">No disponible</option>
+        </select>
+    </div>
+
+    <div>
+        <label for="stock">Stock</label>
+        <input type="number" id="stock" name="stock">
+    </div>
+
+    <div>
+        <label for="category">Categoría</label>
+        <input type="text" id="category" name="category">
+    </div>
+
+    <div>
+        <label for="thumbnails">Imagenes</label>
+        <input type="text" id="thumbnails" name="thumbnails">
+    </div>
+
+    <input type="hidden" id="owner" name="owner" value="{{user.email}}">
+
+    <div>
+        <button type="submit">Agregar producto</button>
+    </div>
+</form>
+
+<script src="/js/premium/add-product.js"></script>

@@ -1,0 +1,96 @@
+<h1>Listado de productos propiedad de {{user.email}}</h1>
+
+<nav>
+    <a href="/premium/add-product">Agregar producto</a>
+
+    <a href="/products">Volver</a>
+</nav>
+
+{{#if products}}
+<form class="query-params-form" id="queryParamsForm">
+    <div>
+        <label for="limit">Límite</label>
+        <input type="number" id="limit" name="limit">
+    </div>
+
+    <div>
+        <label for="page">Página</label>
+        <input type="number" id="page" name="page">
+    </div>
+
+    <div>
+        <label for="status">Estado</label>
+        <select id="status" name="status">
+            <option value="">Seleccionar</option>
+            <option value="true">Disponible</option>
+            <option value="false">No disponible</option>
+        </select>
+    </div>
+
+    <div>
+        <label for="category">Categoría</label>
+        <input type="text" id="category" name="category">
+    </div>
+
+    <div>
+        <label for="sort">Ordenar por precio</label>
+        <select id="sort" name="sort">
+            <option value="">Seleccionar</option>
+            <option value="1">Ascendente</option>
+            <option value="-1">Descendente</option>
+        </select>
+    </div>
+
+    <div>
+        <button type="submit">Aplicar</button>
+    </div>
+</form>
+
+<table>
+    <tr>
+        <th>ID</th>
+        <th>Título</th>
+        <th>Descripción</th>
+        <th>Código</th>
+        <th>Precio</th>
+        <th>Status</th>
+        <th>Stock</th>
+        <th>Categoría</th>
+    </tr>
+
+    {{#each products}}
+    <tr>
+        <td>{{_id}}</td>
+        <td>{{title}}</td>
+        <td>{{description}}</td>
+        <td>{{code}}</td>
+        <td>${{price}}</td>
+        <td>{{status}}</td>
+        <td>{{stock}}</td>
+        <td>{{category}}</td>
+        <td class="last-td">
+            <a href="/premium/product/{{_id}}">Ver</a>
+        </td>
+    </tr>
+    {{/each}}
+</table>
+
+<div>
+    {{#if pagination.hasPrevPage}}
+    <a href={{pagination.prevLink}}>Anterior</a>
+    {{else}}
+    <a>Anterior</a>
+    {{/if}}
+
+    <p>Página {{pagination.page}} de {{pagination.totalPages}}</p>
+
+    {{#if pagination.hasNextPage}}
+    <a href={{pagination.nextLink}}>Siguiente</a>
+    {{else}}
+    <a>Siguiente</a>
+    {{/if}}
+</div>
+
+{{else}}
+<h3>No hay productos creados por el usuario</h3>
+{{/if}}

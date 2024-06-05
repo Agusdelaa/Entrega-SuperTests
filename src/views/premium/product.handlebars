@@ -1,0 +1,22 @@
+<h1>Producto ID {{product._id}}</h1>
+
+<nav>
+    <a href="/premium/products">Volver</a>
+</nav>
+
+<div class="product-info">
+    <p>Título: {{product.title}}</p>
+    <p>Descripción: {{product.description}}</p>
+    <p>Código: {{product.code}}</p>
+    <p>Precio: {{product.price}}</p>
+    <p>Status: {{product.status}}</p>
+    <p>Stock: {{product.stock}}</p>
+    <p>Categoría: {{product.category}}</p>
+    <p>Imágenes: {{product.thumbnails}}</p>
+    <div>
+        <a href="/premium/edit-product/{{product._id}}">Editar</a>
+        <button onclick="deleteProduct('{{product._id}}')">Eliminar</button>
+    </div>
+</div>
+
+<script src="/js/premium/product.js"></script>
