@@ -88,3 +88,18 @@ Productos
 
 SuperTests
 ![13a22fd4-79f1-4b3b-bc03-3e1bef8f3205](https://github.com/Agusdelaa/Entrega-SuperTests/assets/129866349/6cd754d1-e72b-4b19-8584-baf5d51b2443)
+
+Error al cambiar Rol
+![image](https://github.com/Agusdelaa/Entrega-SuperTests/assets/129866349/9dfa85d7-4f07-4bdf-96e6-3290e76cc61f)
+
+Vista subir archivos
+![image](https://github.com/Agusdelaa/Entrega-SuperTests/assets/129866349/f22d1bd1-25cc-42a0-a280-ea28da0a363d)
+![image](https://github.com/Agusdelaa/Entrega-SuperTests/assets/129866349/6f644375-2df9-4c99-87cc-bf4d70c0bad2)
+
+Cambio de rol exitoso
+![image](https://github.com/Agusdelaa/Entrega-SuperTests/assets/129866349/3f8434fe-f5fa-46ad-8e80-1d292c9023d2)
+
+Rol cambiado
+![image](https://github.com/Agusdelaa/Entrega-SuperTests/assets/129866349/ca485d61-1355-4eaf-a841-651b7ac317a9)
+
+
